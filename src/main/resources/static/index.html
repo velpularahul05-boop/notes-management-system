@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Notes Pro</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="background-blur blur1"></div>
+<div class="background-blur blur2"></div>
+
+<div class="container">
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-book"></i>
+            </div>
+
+            <div>
+
+                <h1>Smart Notes Pro</h1>
+
+                <p>Your Personal Productivity Workspace</p>
+
+            </div>
+
+        </div>
+
+        <div class="header-right">
+
+            <button id="themeToggle" class="theme-btn">
+
+                <i class="fa-solid fa-moon"></i>
+
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <section class="dashboard">
+
+        <div class="card">
+
+            <i class="fa-solid fa-note-sticky"></i>
+
+            <h2 id="totalNotes">0</h2>
+
+            <span>Total Notes</span>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-pen"></i>
+
+            <h2 id="editingStatus">OFF</h2>
+
+            <span>Editing</span>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-calendar-days"></i>
+
+            <h2 id="todayDate"></h2>
+
+            <span>Today's Date</span>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                    id="searchInput"
+                    type="text"
+                    placeholder="Search notes...">
+
+        </div>
+
+    </section>
+
+    <!-- ================= NOTE FORM ================= -->
+
+    <section class="note-form glass">
+
+        <h2>Create New Note</h2>
+
+        <input
+
+                id="title"
+
+                type="text"
+
+                placeholder="Enter Note Title">
+
+        <textarea
+
+                id="description"
+
+                placeholder="Write your thoughts here...">
+
+        </textarea>
+
+        <button
+
+                id="saveBtn"
+
+                onclick="saveNote()">
+
+            <i class="fa-solid fa-plus"></i>
+
+            Save Note
+
+        </button>
+
+    </section>
+
+    <!-- ================= NOTES ================= -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>
+
+                <i class="fa-solid fa-layer-group"></i>
+
+                Your Notes
+
+            </h2>
+
+        </div>
+
+        <div
+
+                id="notesContainer"
+
+                class="notes-container">
+
+        </div>
+
+    </section>
+
+</div>
+
+<!-- ================= LOADER ================= -->
+
+<div id="loader" class="loader hidden">
+
+    <div class="spinner"></div>
+
+</div>
+
+<!-- ================= TOAST ================= -->
+
+<div
+
+        id="toast"
+
+        class="toast">
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

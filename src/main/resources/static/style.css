@@ -1,0 +1,857 @@
+/* ===========================================================
+   SMART NOTES PRO - PREMIUM UI
+   =========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+:root{
+
+    --primary:#2563eb;
+    --secondary:#7c3aed;
+    --accent:#06b6d4;
+
+    --glass:rgba(255,255,255,.10);
+
+    --border:rgba(255,255,255,.18);
+
+    --shadow:0 20px 50px rgba(0,0,0,.25);
+
+    --text:#ffffff;
+
+    --bg:#08111f;
+
+    --danger:#ef4444;
+
+    --success:#22c55e;
+
+}
+
+body{
+
+    min-height:100vh;
+
+    background:linear-gradient(
+            135deg,
+            #08111f,
+            #16213e,
+            #1e3a8a,
+            #312e81
+    );
+
+    background-size:400% 400%;
+
+    animation:bgMove 15s ease infinite;
+
+    color:white;
+
+    overflow-x:hidden;
+
+    padding:40px;
+
+}
+
+@keyframes bgMove{
+
+    0%{background-position:0% 50%;}
+
+    50%{background-position:100% 50%;}
+
+    100%{background-position:0% 50%;}
+
+}
+
+/* ================= Blur Background ================= */
+
+.background-blur{
+
+    position:fixed;
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.30;
+
+    z-index:-1;
+
+}
+
+.blur1{
+
+    top:-120px;
+
+    left:-120px;
+
+    background:#2563eb;
+
+}
+
+.blur2{
+
+    bottom:-150px;
+
+    right:-150px;
+
+    background:#7c3aed;
+
+}
+
+/* ================= Container ================= */
+
+.container{
+
+    max-width:1450px;
+
+    margin:auto;
+
+}
+
+/* ================= Glass ================= */
+
+.glass{
+
+    background:var(--glass);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    border-radius:28px;
+
+}
+
+/* ================= Header ================= */
+
+.header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.logo-icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+    );
+
+    font-size:30px;
+
+    box-shadow:0 12px 25px rgba(0,0,0,.35);
+
+}
+
+.logo h1{
+
+    font-size:34px;
+
+    font-weight:700;
+
+}
+
+.logo p{
+
+    margin-top:6px;
+
+    opacity:.75;
+
+}
+
+.theme-btn{
+
+    width:58px;
+
+    height:58px;
+
+    border:none;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+    color:white;
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(20px);
+
+    transition:.35s;
+
+}
+
+.theme-btn:hover{
+
+    transform:translateY(-4px);
+
+    background:rgba(255,255,255,.18);
+
+}
+
+/* ================= Dashboard ================= */
+
+.dashboard{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:22px;
+
+    margin-bottom:35px;
+
+}
+
+.card{
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:25px;
+
+    padding:28px;
+
+    backdrop-filter:blur(20px);
+
+    transition:.35s;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.20);
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.card i{
+
+    font-size:34px;
+
+    color:#67e8f9;
+
+    margin-bottom:18px;
+
+}
+
+.card h2{
+
+    font-size:30px;
+
+    margin-bottom:6px;
+
+}
+
+.card span{
+
+    opacity:.70;
+
+}
+
+#searchInput{
+
+    width:100%;
+
+    margin-top:10px;
+
+    padding:14px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.12);
+
+    color:white;
+
+}
+
+#searchInput::placeholder{
+
+    color:#ddd;
+
+}
+
+/* ================= Form ================= */
+
+.note-form{
+
+    padding:35px;
+
+    margin-bottom:40px;
+
+}
+
+.note-form h2{
+
+    margin-bottom:25px;
+
+    font-size:28px;
+
+}
+
+.note-form input,
+
+.note-form textarea{
+
+    width:100%;
+
+    border:none;
+
+    outline:none;
+
+    margin-bottom:20px;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.12);
+
+    color:white;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+.note-form textarea{
+
+    height:180px;
+
+    resize:none;
+
+}
+
+.note-form input::placeholder,
+
+.note-form textarea::placeholder{
+
+    color:#ddd;
+
+}
+
+.note-form input:focus,
+
+.note-form textarea:focus{
+
+    border:1px solid #60a5fa;
+
+    box-shadow:0 0 15px rgba(96,165,250,.5);
+
+}
+
+#saveBtn{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:18px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    background:linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+    );
+
+    color:white;
+
+    transition:.35s;
+
+}
+
+#saveBtn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 35px rgba(37,99,235,.45);
+
+}
+/* ================= SECTION TITLE ================= */
+
+.section-title{
+
+    margin-bottom:25px;
+
+}
+
+.section-title h2{
+
+    font-size:28px;
+
+    font-weight:600;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.section-title i{
+
+    color:#67e8f9;
+
+}
+
+/* ================= NOTES GRID ================= */
+
+.notes-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+
+    gap:28px;
+
+}
+
+/* ================= NOTE CARD ================= */
+
+.note{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:24px;
+
+    padding:28px;
+
+    transition:.35s;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.25);
+
+}
+
+.note::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:6px;
+
+    height:100%;
+
+    background:linear-gradient(
+
+            #06b6d4,
+
+            #2563eb,
+
+            #7c3aed
+
+    );
+
+}
+
+.note:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 25px 45px rgba(0,0,0,.35);
+
+}
+
+.note h3{
+
+    font-size:24px;
+
+    margin-bottom:15px;
+
+    color:white;
+
+    word-break:break-word;
+
+}
+
+.note p{
+
+    font-size:15px;
+
+    color:#d8d8d8;
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+
+    word-break:break-word;
+
+}
+
+/* ================= BUTTON GROUP ================= */
+
+.note button{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:12px 18px;
+
+    border-radius:14px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.30s;
+
+}
+
+.note button:first-of-type{
+
+    background:#2563eb;
+
+    color:white;
+
+    margin-right:10px;
+
+}
+
+.note button:last-of-type{
+
+    background:#ef4444;
+
+    color:white;
+
+}
+
+.note button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ================= LOADER ================= */
+
+.loader{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(0,0,0,.45);
+
+    backdrop-filter:blur(8px);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+.spinner{
+
+    width:70px;
+
+    height:70px;
+
+    border:7px solid rgba(255,255,255,.2);
+
+    border-top:7px solid #06b6d4;
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ================= TOAST ================= */
+
+.toast{
+
+    position:fixed;
+
+    top:25px;
+
+    right:25px;
+
+    padding:18px 30px;
+
+    border-radius:18px;
+
+    background:#22c55e;
+
+    color:white;
+
+    font-weight:600;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+
+    opacity:0;
+
+    transform:translateY(-30px);
+
+    transition:.35s;
+
+    z-index:99999;
+
+}
+
+.toast.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* ================= SCROLLBAR ================= */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#08111f;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563eb;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#7c3aed;
+
+}
+
+/* ================= DARK MODE ================= */
+
+body.dark{
+
+    background:#05070f;
+
+}
+
+body.dark .card,
+
+body.dark .glass,
+
+body.dark .note{
+
+    background:rgba(18,18,18,.85);
+
+}
+
+body.dark input,
+
+body.dark textarea,
+
+body.dark #searchInput{
+
+    background:#1b1b1b;
+
+    color:white;
+
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+
+    text-align:center;
+
+    margin-top:50px;
+
+    color:#cfcfcf;
+
+    opacity:.8;
+
+    font-size:14px;
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1100px){
+
+    .dashboard{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    body{
+
+        padding:20px;
+
+    }
+
+    .header{
+
+        flex-direction:column;
+
+        gap:25px;
+
+        text-align:center;
+
+    }
+
+    .dashboard{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .notes-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .logo h1{
+
+        font-size:28px;
+
+    }
+
+    .note-form{
+
+        padding:25px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .logo{
+
+        flex-direction:column;
+
+    }
+
+    .logo-icon{
+
+        width:60px;
+
+        height:60px;
+
+    }
+
+    .logo h1{
+
+        font-size:24px;
+
+    }
+
+    .card{
+
+        padding:20px;
+
+    }
+
+}
